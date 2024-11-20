@@ -1,0 +1,10 @@
+
+README.local.md
+/.env.local*
+/.env
+/.idea
+__pycache__/
+*.drawio.svg.bkp
+*.drawio.svg.dtmp
+celerybeat-schedule.*
+test.db

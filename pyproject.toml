@@ -1,0 +1,55 @@
+[tool.poetry]
+name = "mephi-fastapi-auth"
+version = "0.1.0"
+description = ""
+authors = ["kuzminRM <kuzmin.roman2002@yandex.ru>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = {extras = ["standard"], version = "^0.115.5"}
+pydantic-settings = "^2.6.1"
+sqlalchemy = "^2.0.36"
+alembic = "^1.14.0"
+aiosqlite = "^0.20.0"
+
+
+[tool.poetry.group.dev.dependencies]
+mypy = "^1.13.0"
+wemake-python-styleguide = "^0.19.2"
+pre-commit = "^4.0.1"
+pytest = "^8.3.3"
+pytest-asyncio = "^0.24.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.isort]
+line_length = 120
+force_grid_wrap = 0
+force_single_line = true
+multi_line_output = 3
+use_parentheses = true
+include_trailing_comma = true
+sections = ["FUTURE", "STDLIB", "THIRDPARTY", "FIRSTPARTY", "LOCALFOLDER"]
+lines_between_types = 1
+
+[tool.mypy]
+python_version = 3.12
+follow_imports = "silent"
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+warn_return_any = true
+warn_unreachable = true
+implicit_reexport = false
+strict_equality = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests/",]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
